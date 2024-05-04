@@ -1,0 +1,58 @@
+/* cores site individual 
+#034409  (verde escuro header)
+#FFDE59  (amarelo texto header)
+#E5B81D  (amarelo hover header) */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family:"Urbanist", sans-serif;
+}
+.header{
+    width: 100vw;
+    height: 125px;
+    background-color:#034409;
+    display: flex;
+}
+.navbar{
+    width: 95%;
+    color: #FFDE59;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.navbar a{
+    color: #FFDE59;
+    text-decoration: none;
+}
+.navbar a:hover{
+    color: #E5B81D;
+    text-shadow: 2px 2px 2px black;
+}
+.logcad{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login{
+    margin-right: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.cadastro{
+    color: #000000;
+    text-decoration: none;
+}
+.boxcad{
+    display: flex;
+    width: 75px;
+    background-color: white;
+    border-radius: 20px;
+    justify-content: center;      
+}
+.txtheader{
+    font-weight: 800;
+}
