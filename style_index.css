@@ -1,7 +1,10 @@
 /* cores site individual 
 #034409  (verde escuro header)
+#002776  (azul escuro)
 #FFDE59  (amarelo texto header)
-#E5B81D  (amarelo hover header) */
+#E5B81D  (amarelo hover header) 
+#D8B674  (marrom areia footer)*/
+
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
@@ -12,13 +15,21 @@
    
 }
 body{
-    background-color: #E6FFB5;
+    background-color: #5ce1e6;
+}
+.bg{
+    background-image: url(assets/bgpnb.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 .header{
     width: 100vw;
     height: 75px;
-    background-color:#034409;
+    background-color:#002776;
     display: flex;
+    position: fixed;
 }
 .navbar{
     width: 95%;
@@ -52,23 +63,24 @@ body{
     color: #000000;
     text-decoration: none;
 }
-.boxcad{
+.btncadastro{
     display: flex;
     width: fit-content;
     background-color: white;
     border-radius: 20px;
-    justify-content: center;      
+    justify-content: center;
+    padding: 3px;      
 }
 .txtheader{
     font-weight: 800;
 }
 .banner{
     width: 100%;
-    height: 85vh;
+    height: 95vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: start;
     background-image: url(assets/pescaesoportiva.jpg);
     background-size: cover;
 }
@@ -105,8 +117,9 @@ body{
     background-color: #F5F5F5;
     flex-direction: column;
     font-weight: 500;
-    margin-top: 1rem;
-    border: 15px solid #F5F5F5;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 15px;
     border-radius: 15px;
     box-shadow: 5px 5px 10px black;
 }
@@ -119,7 +132,34 @@ body{
     font-weight: 500;
     flex-direction: column;
     float: right;
-    border: 15px solid #F5F5F5;
+    margin-bottom: 5rem;
+    padding: 15px;
     border-radius: 15px;
     box-shadow: 5px 5px 10px black;
+}
+.bannerbox{
+    display: flex;
+    width: 43%;
+    height: fit-content;
+    background-color: rgba(183, 255, 255, 0.3);
+    float: left;
+    border-radius: 15px;
+    padding: 15px;
+}
+.banner .titulo{
+    font-size: 40px;
+    font-weight: 600;
+}
+footer{
+    display: flex;
+    width: 100%;
+    height: 7.2rem;
+    background-color: #034409;
+    justify-content: center;
+    align-items: center;
+}
+.conteudofooter{
+    color: #FFDE59;
+    font-size: 25px;
+    font-weight: 500;
 }
