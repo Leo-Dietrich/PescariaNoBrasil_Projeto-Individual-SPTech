@@ -30,6 +30,7 @@ body{
     background-color:#002776;
     display: flex;
     position: fixed;
+    z-index: 998;
 }
 .navbar{
     width: 95%;
@@ -75,14 +76,29 @@ body{
     font-weight: 800;
 }
 .banner{
+    position: relative;
     width: 100%;
     height: 95vh;
-    display: flex;
-    flex-direction: row;
+    overflow: hidden;
     align-items: flex-end;
-    justify-content: start;
-    background-image: url(assets/pescaesoportiva.jpg);
-    background-size: cover;
+    margin-top: 75px;
+    z-index: 1;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.slide img{
+    width: 100vw;
+    height: auto;
+}
+.active {
+    opacity: 1;
 }
 .containercirculo{
     display: flex;
@@ -139,12 +155,15 @@ body{
 }
 .bannerbox{
     display: flex;
+    position: absolute;
+    bottom: 0;
     width: 43%;
     height: fit-content;
     background-color: rgba(183, 255, 255, 0.3);
     float: left;
     border-radius: 15px;
     padding: 15px;
+    z-index: 999 ;
 }
 .banner .titulo{
     font-size: 40px;
