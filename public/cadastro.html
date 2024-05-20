@@ -32,35 +32,55 @@
     </div>
 </body>
 </html>
+
 <script>
+  function cadastrar() {
 
-    function cadastrar(){
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nome = iptNome.value;
+    var email = iptEmail.value;
+    var senha = iptSenha.value;
+    var confirmacao = iptConfirma.value;
 
-        var nome = iptNome.value;
-        var email = iptEmail.value;
-        var senha = iptSenha.value;
-        var confirma = iptConfirma.value;
-        var login = true;
-        var indexArroba = email.indexOf('@')
-        if(indexArroba <= 0){
-            iptEmail.style = 'border: 3px solid red';
-            login = false;
+    if (
+      nome == "" ||
+      email == "" ||
+      senha == "" ||
+      confirmacao == ""
+    ) return; 
+    
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nome: nome,
+        email: email,
+        senha: senha,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+
+          setTimeout(() => {
+            window.location = "index.html";
+          }, "2000");
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
         }
-        if(senha != confirma){
-            iptSenha.style ='border: 3px solid red';
-            iptConfirma.style ='border: 3px solid red';
-            divRevisao.style ='display:block';
-            login = false;
-        } 
-        if(login){
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
 
-        }
-        console.log(nome);
-        console.log(sobrenome);
-        console.log(email);
-        console.log(senha);
-        console.log(confirma);
-    }
-
+    return;
+  }
 
 </script>
