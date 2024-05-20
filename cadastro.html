@@ -4,20 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pescaria No Brasil</title>
-    <link rel="stylesheet" href="style_cadastro.css">
+    <script src="./js/sessao.js"></script>
+    <link rel="stylesheet" href="./css/style_cadlog.css">
 </head>
 <body>
+    <div class="bg">
+        <img src="./assets/boat2.gif" alt="">
+    </div>
     <div class="containercadastro">
-        <p> Nome(s):</p>
-        <input type="text" placeholder="Ex: João Pedro">
-        <p>Sobrenome(s):</p>
-        <input type="text" placeholder="Ex: da Silva Sauro">
+        <p> Nome completo:</p>
+        <input type="text" placeholder="Ex: João Pedro" id="iptNome">
         <p>E-mail:</p>
-        <input type="text" placeholder="seuemail@provedor.com.br">
+        <input type="text" placeholder="seuemail@provedor.com.br" id="iptEmail">
         <p>Senha:</p>
-        <input type="text" placeholder="Ex: Senha@secreta123">
+        <input type="password" placeholder="•••••••••" id="iptSenha">
         <p>Confirme sua senha:</p>
-        <input type="text" placeholder="Ex: Senha@secreta123">
+        <input type="password" placeholder="•••••••••" id="iptConfirma">
+        <div>
+            <a href="./index.html"><button>Voltar</button></a> <button onclick="cadastrar()">Cadastrar</button>
+        </div>
+        <div class="revisao" id="divRevisao">
+            <p>Revise os campos em vermelho!</p>
+        </div>
+        <div>
+            <a href="./login.html"><p>Já possui uma conta? Clique aqui para fazer login.</p></a>
+        </div>
     </div>
 </body>
 </html>
+<script>
+
+    function cadastrar(){
+
+        var nome = iptNome.value;
+        var email = iptEmail.value;
+        var senha = iptSenha.value;
+        var confirma = iptConfirma.value;
+        var login = true;
+        var indexArroba = email.indexOf('@')
+        if(indexArroba <= 0){
+            iptEmail.style = 'border: 3px solid red';
+            login = false;
+        }
+        if(senha != confirma){
+            iptSenha.style ='border: 3px solid red';
+            iptConfirma.style ='border: 3px solid red';
+            divRevisao.style ='display:block';
+            login = false;
+        } 
+        if(login){
+
+        }
+        console.log(nome);
+        console.log(sobrenome);
+        console.log(email);
+        console.log(senha);
+        console.log(confirma);
+    }
+
+
+</script>
