@@ -3,7 +3,8 @@
 #002776  (azul escuro)
 #FFDE59  (amarelo texto)
 #E5B81D  (amarelo hover) 
-#D8B674  (marrom areia)*/
+#D8B674  (marrom areia)
+#baf7c0  (verde meio azul sei la)*/
 
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -18,7 +19,7 @@ body{
     background-color: #5ce1e6;
 }
 .bg{
-    background-image: url(../assets/bg_pnb.png);
+    background-image: url(../assets/bg_pnbdesfoque.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -55,6 +56,9 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+.logcad .cadastro:hover{
+    text-shadow: none;
+}
 .login{
     margin-right: 10px;
     color: #FFFFFF;
@@ -67,10 +71,13 @@ body{
 .btncadastro{
     display: flex;
     width: fit-content;
-    background-color: white;
+    background-color: #f5f5f5;
     border-radius: 20px;
     justify-content: center;
     padding: 3px;      
+}
+.btncadastro:hover{
+    background-color: #dbdbdb;
 }
 .txtheader{
     font-weight: 800;
@@ -98,7 +105,7 @@ body{
     height: 95vh;
     
 }
-.active {
+.primeiro {
     opacity: 1;
 }
 .containercirculo{
@@ -111,10 +118,10 @@ body{
 }
 .circulo{
     display: flex;
-    background-color: #baf7c0;
+    background-color: #FFDE59;
     width: 200px;
     height: 100px;
-    color: #000000;
+    color: #002776;
     border-radius: 180px;
     align-items: center;
     justify-content: center;
@@ -184,4 +191,19 @@ footer{
     color: #FFDE59;
     font-size: 20px;
     font-weight: 500;
+}
+footer img{
+    overflow: hidden;
+    height: 25px;
+}
+.username{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFDE59;
+}
+.btnSair{
+    top: 50px;
+    position: absolute;
+    cursor: pointer;
 }

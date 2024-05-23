@@ -2,19 +2,29 @@
 function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
+    var primeiroNome = '';
 
-    var b_usuario = document.getElementById("b_usuario");
+    var spanUser = document.getElementById("spanUser");
 
-    if (email != null && nome != null) {
-        b_usuario.innerHTML = nome;
+    if (email != undefined && nome != undefined) {
+        for (let i = 0; i < nome.length; i++) {
+            primeiroNome += nome[i];
+            if(nome[i] == ' '){
+                break
+            }
+        }
+        divLogcad.style ="display: none"
+        divBemvindo.style ="display: flex"
+        spanUser.innerHTML = primeiroNome;
     } else {
-        window.location = "../login.html";
+        divLogcad.style ="display: flex"
+        divBemvindo.style ="display: none"
     }
 }
 
 function limparSessao() {
     sessionStorage.clear();
-    window.location = "../login.html";
+    window.location.reload(true);
 }
 
 

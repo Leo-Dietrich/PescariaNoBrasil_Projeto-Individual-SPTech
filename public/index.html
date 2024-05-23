@@ -5,43 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pescaria No Brasil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link rel="stylesheet" href="./css/style_index.css">
+    <script src="./js/sessao.js"></script>
 </head>
 
-<body>
+<body onload="validarSessao()">
     <div id="divHeader" class="header"> <!-- header e navbar -->
         <img src="./assets/logo.png" alt="Logo do site">
         <ul class="navbar txtheader">
             <a href="">
                 <li>Rios</li>
             </a>
-            <a href="">
+            <a href="./peixes.html">
                 <li>Peixes</li>
             </a>
             <a href="">
                 <li>Quiz da Pesca</li>
             </a>
-            <div class="logcad">
+            <div class="logcad" id="divLogcad">
 
                 <a href="./login.html">
                     <li class="login">Login</li>
                 </a>
                 <a href="./cadastro.html">
-                    <li class="cadastro">
+                    <li class="cadastro" >
                         <div class="btncadastro">
                             Cadastro
                         </div>
                     </li>
                 </a>
+            </div>
+            <div class="username txtheader" id="divBemvindo">
+                <p>Bem-vindo(a), <span id="spanUser">usuário</span>!</p> 
+                <p class="btnSair" onmouseover="abrirPorta()" onmouseleave="fecharPorta()" onclick="limparSessao()"><i id="porta"  class="fa-solid fa-door-closed"></i>Sair</p>
+            </div>
         </ul>
-    </div>
     </div>
 
     <div class="banner">
         <div class="bannerbox">
             <p class="titulo">Pescaria esportiva: Aprenda sobre o esporte que mais cresce no Brasil!</p>
         </div>
-        <div class="slide active">
+        <div class="slide primeiro">
             <img src="./assets/pescaesoportiva.jpg" alt="">
         </div>
         <div class="slide">
@@ -118,23 +124,35 @@
         </div>
         <footer>
             <span class="conteudofooter">Feito com amor por um aluno SPTech e pescador esportivo 🎣💛</span> <br>
-            <span class="conteudofooter" style="font-size: 15px;">Por Leonardo Dietrich © </span>
+            <span class="conteudofooter" style="font-size: 15px;">Por Leonardo Dietrich©  </span> <br>
+            <a href="https://github.com/Leo-Dietrich"><img src="./assets/icone-github.png" alt=""></a>
         </footer>
     </div>
 </body>
 
 </html>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    let slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
 
-    function nextSlide() {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
+    
+    function abrirPorta(){
+        porta.classList.remove("fa-door-closed")
+        porta.classList.add("fa-door-open")
+    }
+    function fecharPorta(){
+        porta.classList.remove("fa-door-open")
+        porta.classList.add("fa-door-closed")
     }
 
-    setInterval(nextSlide, 5000); // Altera a cada 5 segundos (5000 milissegundos)
-});
+    document.addEventListener("DOMContentLoaded", function () {
+        let slides = document.querySelectorAll('.slide');
+        let slideAtual = 0;
+
+        function proximoSlide() {
+            slides[slideAtual].classList.remove('primeiro');
+            slideAtual = (slideAtual + 1) % slides.length;
+            slides[slideAtual].classList.add('primeiro');
+        }
+
+        setInterval(proximoSlide, 5000); // Altera a cada 5 segundos (5000 milissegundos)
+    });
 </script>
