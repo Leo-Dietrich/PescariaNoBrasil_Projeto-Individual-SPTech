@@ -27,4 +27,12 @@ function limparSessao() {
     window.location.reload(true);
 }
 
+function abrirPorta(){
+    porta.classList.remove("fa-door-closed")
+    porta.classList.add("fa-door-open")
+}
+function fecharPorta(){
+    porta.classList.remove("fa-door-open")
+    porta.classList.add("fa-door-closed")
+}
 

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PNB | Peixes</title>
-    <link rel="stylesheet" href="./css/style_riospeixes.css">
+    <title>PNB | Quiz</title>
+    <link rel="stylesheet" href="css/style_quiz.css">
     <script src="./js/sessao.js"></script>
 </head>
 
@@ -16,10 +16,10 @@
             <a href="./rios.html">
                 <li>Rios</li>
             </a>
-            <a href="" class="atual">
+            <a href="./peixes.html">
                 <li>Peixes</li>
             </a>
-            <a href="./quiz.html">
+            <a href="" class="atual">
                 <li>Quiz da Pesca</li>
             </a>
             <div class="logcad" id="divLogcad">
@@ -42,7 +42,21 @@
         </ul>
     </div>
     <div class="bg">
-        <div class="conteudo"></div>
+        <div class="conteudo">
+            <p class="titulo">Teste seus conhecimentos!</p>
+            <div class="containerQuiz">
+                <div id="quiz">
+                    <div id="pergunta"></div>
+                    <div class="opcoes">
+                        <button class="opcao" onclick="selectResposta(0)">Opção 1</button>
+                        <button class="opcao" onclick="selectResposta(1)">Opção 2</button>
+                        <button class="opcao" onclick="selectResposta(2)">Opção 3</button>
+                        <button class="opcao" onclick="selectResposta(3)">Opção 4</button>
+                    </div>
+                    <button id="next-button" onclick="proxPergunta()">Próxima</button>
+                </div>
+            </div>
+        </div>
         <footer>
             <span class="conteudofooter">Feito com amor por um aluno SPTech e pescador esportivo 🎣💛</span> <br>
             <span class="conteudofooter" style="font-size: 15px;">Por Leonardo Dietrich©  </span> <br>
@@ -51,15 +65,3 @@
     </div>
 </body>
 </html>
-<script>
-
-    function abrirPorta(){
-        porta.classList.remove("fa-door-closed")
-        porta.classList.add("fa-door-open")
-    }
-    function fecharPorta(){
-        porta.classList.remove("fa-door-open")
-        porta.classList.add("fa-door-closed")
-    }
-
-</script>
