@@ -88,8 +88,21 @@ body{
     font-weight: 800;
 }
 .conteudo{
+    display: flex;
     width: 100vw;
     height: 800px;
+    margin-top: 75px;
+    align-items: center;
+    flex-direction: column;
+}
+.titulo{
+    font-size: 45.6px;
+    padding: 1rem;
+    background-color: rgba(183, 255, 255, 0.3);
+    border-radius: 15px;
+    justify-content: space-around;
+    margin-top: 4rem;
+    font-weight: 500;
 }
 footer{
     display: flex;
@@ -119,4 +132,21 @@ footer img{
     top: 50px;
     position: absolute;
     cursor: pointer;
+}
+#select1{
+    margin: 25px;
+    padding: 6px;
+    border-radius: 10px;
+    font-size: 35px;
+    text-align: center;
+    background-color: rgba(183, 255, 255, 0.3);
+    font-weight: 500;
+}
+option{
+    background-color: rgba(198, 254, 254, 0.3);
+    font-size: 30px;
+}
+.navbar .atual{
+    color: #E5B81D;
+    text-shadow: 2px 2px 2px black;   
 }

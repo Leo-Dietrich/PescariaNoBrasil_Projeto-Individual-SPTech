@@ -93,7 +93,7 @@ body{
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 800px;
+    height: 100%;
     flex-direction: column;
 }
 footer{
@@ -126,12 +126,14 @@ footer img{
     cursor: pointer;
 }
 .containerQuiz {
-    height: 300px;
+    height: fit-content;
     width: 500px;
-    background-color: #d4d4d4d2;
-    padding: 20px;
+    background-color: rgba(183, 255, 255, 0.3);
+    padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow-y: hidden ;
+    margin-bottom: 3rem;
 }
 
 #quiz {
@@ -141,10 +143,15 @@ footer img{
 }
 
 #pergunta {
-    margin-bottom: 20px;
-    font-size: 20px;
+    justify-content: space-around;
+    margin: 10px;
+    font-size: 25px;
+    font-weight: 500;
 }
-
+#pergunta img{
+    width: 500px;
+    margin-top: 2rem;
+}
 .opcoes {
     display: flex;
     flex-direction: column;
@@ -179,10 +186,21 @@ footer img{
 #next-button:hover {
     background-color: #218838;
 }
+.boxTitulo{
+    padding: 3rem;
+}
 .titulo{
-    font-size: 50px;
-    margin-bottom: 3rem;
-    background-color: #d4d4d4d2;
+    font-size: 45.6px;
+    padding: 1rem;
+    background-color: rgba(183, 255, 255, 0.3);
     border-radius: 15px;
     justify-content: space-around;
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+    font-weight: 500;
+    
+}
+.navbar .atual{
+    color: #E5B81D;
+    text-shadow: 2px 2px 2px black;   
 }
