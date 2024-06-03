@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PNB | Rios</title>
+    <title>PNB | Peixes</title>
     <link rel="stylesheet" href="./css/style_riospeixes.css">
     <script src="./js/sessao.js"></script>
 </head>
@@ -13,10 +13,10 @@
     <div id="divHeader" class="header"> <!-- header e navbar -->
         <a class="a_index" href="./index.html"><img class="logo" src="./assets/logo.png" alt="Logo do site"></a>
         <ul class="navbar txtheader">
-            <a href="" class="atual">
+            <a href="./rios.html">
                 <li>Rios</li>
             </a>
-            <a href="./peixes.html">
+            <a href="" class="atual">
                 <li>Peixes</li>
             </a>
             <a href="./quiz.html">
@@ -42,7 +42,296 @@
         </ul>
     </div>
     <div class="bg">
-        <div class="conteudo"></div>
+        <div class="conteudo">
+            
+            <p class="titulo">Quer saber os peixes que ocorrem na sua bacia?</p>
+            <div class="selects">
+                <select name="" id="slcBacia">
+                    <option selected disabled value="#">Selecione a bacia</option>
+                    <option value="1">Bacia Amazônica</option>
+                    <option value="2">Bacia Araguaia-Tocantins</option>
+                    <option value="3">Bacia do Paraná</option>
+                    <option value="4">Bacia do São Francisco</option>
+                    <option value="5">Bacia do Atlântico Sul</option>
+                </select>
+                <button class="btnDescobrir" onclick="descobrir()">Clique Aqui</button>
+            </div>
+            <div class="info" id="n1">
+                <p class="bacia">Bacia Amazônica</p>
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/tucunare.jpg" alt="Tucunaré">
+                    <h1>Tucunaré (<i>Cichla spp.</i>)</h1>
+                    <p>Um dos peixes mais populares para pesca esportiva no Brasil, alvo de pescadores esportivos do mundo inteiro por sua voracidade e ataques a iscas artificiais.</p> <br>
+                    <p> <b>Iscas:</b> Lambaris e camarões vivos, iscas artificiais de todos os tipos e tamanho se destacando as de superfície. <br>
+                        <b>Peso médio:</b> 2-5 kg <br>
+                        <b>Peso máximo:</b> 12 kg <br>
+                        <b>Comprimento máximo:</b> 1 m <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/pirarucu.jpg" alt="Pirarucu">
+                    <h1>Pirarucu (<i>Arapaima gigas</i>)</h1>
+                    <p>O maior peixe de água doce de escamas do mundo, seu nome significa peixe vermelho em tupi devido a cor de sua cauda.</p> <br>
+                    <p> <b>Iscas:</b> Peixinhos grandes vivos, iscas artificiais de superfície e meia água. <br>
+                        <b>Peso médio:</b> 80-150 kg <br>
+                        <b>Peso máximo:</b> 220 kg <br>
+                        <b>Comprimento máximo:</b> 3 m <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/piraiba.jpg" alt="Piraíba">
+                    <h1>Piraíba (<i>Brachyplatystoma filamentosum</i>)</h1>
+                    <p>Peixe de couro de grande porte, o maior peixe de água doce das américas. Os pequenos exemplares são popularmente conhecidos como “filhote” nas comunidades ribeirinhas.</p> <br>
+                    <p> <b>Iscas:</b> Peixes vivos ou em pedaços grandes e cabeças. <br>
+                        <b>Peso médio:</b> 60-100 kg <br>
+                        <b>Peso máximo:</b> 300 kg <br>
+                        <b>Comprimento máximo:</b> 3 m <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/cachara.jpg" alt="Surubim Cachara">
+                    <h1>Surubim Cachara (<i>Pseudoplatystoma fasciatum</i>)</h1>
+                    <p>Peixe de couro de médio porte.</p> <br>
+                    <p> <b>Iscas:</b> Tuvira, pequenos peixes vivos, minhocoçu. <br>
+                        <b>Peso médio:</b> 15 kg <br>
+                        <b>Peso máximo:</b> 30 kg <br>
+                        <b>Comprimento máximo:</b> Pode chegar a 1 m <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/caparari.jpeg" alt="Surubim Caparari">
+                    <h1>Surubim Caparari (<i>Pseudoplatystoma tigrinum</i>)</h1>
+                    <p>Peixe de couro de médio porte, se difere da cachara por não possuir manchas na cabeça.</p> <br>
+                    <p> <b>Iscas:</b> Tuvira, pequenos peixes vivos, minhocoçu. <br>
+                        <b>Peso médio:</b> 15 kg <br>
+                        <b>Peso máximo:</b> 30 kg <br>
+                        <b>Comprimento máximo:</b> Pode chegar a 1 m <br>
+                    </p>
+                </div>
+            </div>
+            <div class="info" id="n2">
+                <p class="bacia">Bacia Araguaia-Tocantins</p>
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/tucunare.jpg" alt="Tucunaré">
+                    <h1>Tucunaré (<i>Cichla spp.</i>)</h1>
+                    <p>Também presente nesta bacia, um dos peixes mais populares para pesca esportiva no Brasil, alvo de pescadores esportivos do mundo inteiro por sua voracidade e ataques a iscas artificiais.</p> <br>
+                    <p> <b>Iscas:</b> Lambaris e camarões vivos, iscas artificiais de todos os tipos e tamanho se destacando as de superfície. <br>
+                        <b>Peso médio:</b> 2-5 kg <br>
+                        <b>Peso máximo:</b> 12 kg <br>
+                        <b>Comprimento máximo:</b> 1 m <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/pirarara.jpg" alt="Pirarara">
+                    <h1>Pirarara (<i>Phractocephalus hemioliopterus</i>)</h1>
+                    <p>Peixe de couro de grande porte de cores vibrantes. Foi batizado de peixe arara, em tupi, devido a suas nadadeiras vermelhas.</p> <br>
+                    <p> <b>Iscas:</b> Peixes vivos ou em pedaços grandes e cabeças. <br>
+                        <b>Peso médio:</b> 10-20 kg <br>
+                        <b>Peso máximo:</b> 50 kg <br>
+                        <b>Comprimento máximo:</b> 1,5 m <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/jau.jpg" alt="Jaú">
+                    <h1>Jaú (<i>Zungaro zungaro</i>)</h1>
+                    <p>Outro grande peixe de couro, bastante cobiçado pelos amantes deste tipo de pescaria. Presente também na bacia Amazônica e do Paraná.</p> <br>
+                    <p> <b>Iscas:</b> Peixes vivos ou em pedaços grandes e cabeças. <br>
+                        <b>Peso médio:</b> 30-50 kg <br>
+                        <b>Peso máximo:</b> 100 kg <br>
+                        <b>Comprimento máximo:</b> 2 m <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/cachorra.jpg" alt="Cachorra">
+                    <h1>Cachorra (<i>Hydrolycus spp.</i>)</h1>
+                    <p>Conhecido pelos seus dentes afiados e aparência agressiva.</p> <br>
+                    <p> <b>Iscas:</b> Peixes vivos, tuvira, iscas artificiais de meia água ou superfície. <br>
+                        <b>Peso médio:</b> 3-5 kg <br>
+                        <b>Peso máximo:</b> 10 kg <br>
+                        <b>Comprimento máximo:</b> 1 m <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/piraiba.jpg" alt="Piraíba">
+                    <h1>Piraíba (<i>Brachyplatystoma filamentosum</i>)</h1>
+                    <p>Peixe de couro de grande porte, o maior peixe de água doce das américas. Os pequenos exemplares são popularmente conhecidos como “filhote” nas comunidades ribeirinhas.</p> <br>
+                    <p> <b>Iscas:</b> Peixes vivos ou em pedaços grandes e cabeças. <br>
+                        <b>Peso médio:</b> 60-100 kg <br>
+                        <b>Peso máximo:</b> 300 kg <br>
+                        <b>Comprimento máximo:</b> 3 m <br>
+                    </p>
+                </div>
+            </div>
+            <div class="info" id="n3">
+                <p class="bacia">Bacia do Paraná</p>
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/dourado_eu.jpg" alt="">
+                    <h1>Dourado (<i>Salminus Brasiliensis</i>)</h1>
+                    <p>Conhecido como o "rei do rio", é um dos peixes esportivos mais icônicos do Brasil, muito popular por sua briga e saltos.</p> <br>
+                    <p> <b>Iscas:</b> Tuvira, peixes vivos, iscas artificiais de meia água e de barbela longa. <br>
+                        <b>Peso médio:</b> 5-10 kg <br>
+                        <b>Peso máximo:</b> 30 kg <br>
+                        <b>Comprimento máximo:</b> 1,3 m <br>
+                        </p>
+                </div>
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/jau.jpg" alt="">
+                    <h1>Jaú (<i>Zungaro zungaro</i>)</h1>
+                    <p>Também presente na bacia Amazônica e Araguaia-tocantins, há o debate que o jaú da bacia do Paraná seja o maior de todos.</p> <br>
+                    <p> <b>Iscas:</b> Peixes vivos ou em pedaços grandes e cabeças. <br>
+                        <b>Peso médio:</b> 30-50 kg <br>
+                        <b>Peso máximo:</b> 100 kg <br>
+                        <b>Comprimento máximo:</b> 2 m <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/pintado.jpg" alt="">
+                    <h1>Surubim Pintado (<i>Pseudoplatystoma corruscans</i>)</h1>
+                    <p>Grande peixe de couro, muito popular entre pescadores, muito parecido com a Cachara e Caparari, porém se difere por ter pintas ao invés de riscos e ser de maior porte.</p> <br>
+                    <p> <b>Iscas:</b> Tuvira, peixes vivos, minhocoçu, iscas artificiais de barbela longa. <br>
+                        <b>Peso médio:</b> 20-40 kg <br>
+                        <b>Peso máximo:</b> 80 kg <br>
+                        <b>Comprimento máximo:</b> 1,8 m <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/tucunare.jpg" alt="">
+                    <h1>Tucunaré (<i>Cichla spp.</i>)</h1>
+                    <p>Introduzido em diversas bacias é um dos peixes mais populares para pesca esportiva no Brasil, alvo de pescadores esportivos do mundo inteiro por sua voracidade e ataques a iscas artificiais.</p> <br>
+                    <p> <b>Iscas:</b> Lambaris e camarões vivos, iscas artificiais de todos os tipos e tamanho se destacando as de superfície. <br>
+                        <b>Peso médio:</b> 2-5 kg <br>
+                        <b>Peso máximo:</b> 7 kg <br>
+                        <b>Comprimento máximo:</b> 60 cm <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/tilápia.jpg" alt="">
+                    <h1>Tilápia (<i>Oreochromis spp.</i>)</h1>
+                    <p>Peixe africano muito popular na piscicultura, introduzido em diversos rios por todo o Brasil, muitas vezes considerada praga.</p> <br>
+                    <p> <b>Iscas:</b> Minhocas, bicho da laranja, tenébrio, massas caseiras, pequenas iscas artificiais de meia água e pequenos spinners. <br>
+                        <b>Peso médio:</b> 600g-1,5kg <br>
+                        <b>Peso máximo:</b> 6 kg <br>
+                        <b>Comprimento máximo:</b> 60 cm <br>
+                    </p>
+                </div>
+            
+            </div>
+            <div class="info" id="n4">
+                <p class="bacia">Bacia do São Francisco</p>
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/dourado_eu.jpg" alt="Dourado">
+                    <h1>Dourado (<i>Salminus brasiliensis</i>)</h1>
+                    <p>Também presente nesta bacia, é um dos principais alvos dos pescadores. Conhecido como o "rei do rio", é um dos peixes esportivos mais icônicos do Brasil, muito popular por sua briga e saltos.</p> <br>
+                    <p> <b>Iscas:</b> Tuvira, peixes vivos, iscas artificiais de meia água e de barbela longa. <br>
+                        <b>Peso médio:</b> 3-6 kg <br>
+                        <b>Peso máximo:</b> 15 kg <br>
+                        <b>Comprimento máximo:</b> 90 cm <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/pintado.jpg" alt="Surubim Pintado">
+                    <h1>Surubim Pintado (<i>Pseudoplatystoma corruscans</i>)</h1>
+                    <p>Grande peixe de couro, muito popular entre pescadores, muito parecido com a Cachara e Caparari, porém se difere por ter pintas ao invés de riscos e ser de maior porte.</p> <br>
+                    <p> <b>Iscas:</b> Tuvira, peixes vivos, minhocoçu, iscas artificiais de barbela longa. <br>
+                        <b>Peso médio:</b> 10-25 kg <br>
+                        <b>Peso máximo:</b> 50 kg <br>
+                        <b>Comprimento máximo:</b> 1,4 m <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/curimba.jpg" alt="Curimba/Curimatá">
+                    <h1>Curimba/Curimatá (<i>Prochilodus spp.</i>)</h1>
+                    <p>Menor, mas comum entre pescadores esportivos. Peixe manhoso e de difícil captura.</p> <br>
+                    <p> <b>Iscas:</b> Massas caseiras, minhocas, milho e outros vegetais. <br>
+                        <b>Peso médio:</b> 1-2 kg <br>
+                        <b>Peso máximo:</b> 3 kg <br>
+                        <b>Comprimento máximo:</b> 50 cm <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/tucunare.jpg" alt="Tucunaré">
+                    <h1>Tucunaré (<i>Cichla spp.</i>)</h1>
+                    <p>Introduzido em diversas bacias é um dos peixes mais populares para pesca esportiva no Brasil, alvo de pescadores esportivos do mundo inteiro por sua voracidade e ataques a iscas artificiais.</p> <br>
+                    <p> <b>Iscas:</b> Lambaris e camarões vivos, iscas artificiais de todos os tipos e tamanho se destacando as de superfície. <br>
+                        <b>Peso médio:</b> 2-5 kg <br>
+                        <b>Peso máximo:</b> 7 kg <br>
+                        <b>Comprimento máximo:</b> 60 cm <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/tilápia.jpg" alt="Tilápia">
+                    <h1>Tilápia (<i>Oreochromis spp.</i>)</h1>
+                    <p>Peixe africano muito popular na piscicultura, introduzido em diversos rios por todo o Brasil, muitas vezes considerada praga.</p> <br>
+                    <p> <b>Iscas:</b> Minhocas, bicho da laranja, tenébrio, massas caseiras, pequenas iscas artificiais de meia água e pequenos spinners. <br>
+                        <b>Peso médio:</b> 600g-1,5kg <br>
+                        <b>Peso máximo:</b> 6 kg <br>
+                        <b>Comprimento máximo:</b> 60 cm <br>
+                    </p>
+                </div>
+            </div>
+            <div class="info" id="n5">
+                <p class="bacia">Bacia do Atlântico Sul</p>
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/traira.jpg" alt="Traíra">
+                    <h1>Traíra (<i>Hoplias malabaricus</i>)</h1>
+                    <p>Um predador agressivo, muito procurado pelos pescadores esportivos, ocorre em todo o território nacional, um dos peixes mais populares para pesca.</p> <br>
+                    <p> <b>Iscas:</b> Lambaris, pedaços de carne ou peixe, iscas artificiais soft, de superfície e meia água. <br>
+                        <b>Peso médio:</b> 1-2 kg <br>
+                        <b>Peso máximo:</b> 5 kg <br>
+                        <b>Comprimento máximo:</b> 60 cm <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/jundia.jpg" alt="Jundiá/Bagre">
+                    <h1>Jundiá/Bagre (<i>Rhamdia spp.</i>)</h1>
+                    <p>Um peixe de couro de pequeno/médio porte bastante popular entre pescadores e bem distribuído por todo território nacional.</p> <br>
+                    <p> <b>Iscas:</b> Pedaços de peixe ou carne, minhoca, massas caseiras. <br>
+                        <b>Peso médio:</b> 1-2 kg <br>
+                        <b>Peso máximo:</b> 3 kg <br>
+                        <b>Comprimento máximo:</b> 60 cm <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/tilápia.jpg" alt="Tilápia">
+                    <h1>Tilápia (<i>Oreochromis spp.</i>)</h1>
+                    <p>Peixe africano muito popular na piscicultura, introduzido em diversos rios por todo o Brasil, muitas vezes considerada praga.</p> <br>
+                    <p> <b>Iscas:</b> Minhocas, bicho da laranja, tenébrio, massas caseiras, pequenas iscas artificiais de meia água e pequenos spinners. <br>
+                        <b>Peso médio:</b> 600g-1,5kg <br>
+                        <b>Peso máximo:</b> 6 kg <br>
+                        <b>Comprimento máximo:</b> 60 cm <br>
+                    </p>
+                </div>
+            
+                <div class="peixe">
+                    <img src="./assets/pg_peixes/lambari.jpg" alt="Lambari">
+                    <h1>Lambari (<i>Astyanax spp.</i>)</h1>
+                    <p>Peixe pequeno, mas muito comum na pesca esportiva, muito usado como isca para peixes maiores e distribuído por todo território nacional.</p> <br>
+                    <p> <b>Iscas:</b> Massas caseiras, macarrão, minhoca, milho. <br>
+                        <b>Peso médio:</b> 50-100 g <br>
+                        <b>Peso máximo:</b> 200 g <br>
+                        <b>Comprimento máximo:</b> 20 cm <br>
+                    </p>
+                </div>
+            
+            </div>
+        </div>
         <footer>
             <span class="conteudofooter">Feito com amor por um aluno SPTech e pescador esportivo 🎣💛</span> <br>
             <span class="conteudofooter" style="font-size: 15px;">Por Leonardo Dietrich©  </span> <br>
@@ -60,6 +349,41 @@
     function fecharPorta(){
         porta.classList.remove("fa-door-open")
         porta.classList.add("fa-door-closed")
+    }
+    function descobrir(){
+        var bacia = slcBacia.value
+        if(bacia == "1"){
+            n1.style = "display:flex"
+            n2.style = "display:none"
+            n3.style = "display:none"
+            n4.style = "display:none"
+            n5.style = "display:none"
+        }else if(bacia == "2"){
+            n1.style = "display:none"
+            n2.style = "display:flex"
+            n3.style = "display:none"
+            n4.style = "display:none"
+            n5.style = "display:none"
+        }else if(bacia == "3"){
+            n1.style = "display:none"
+            n2.style = "display:none"
+            n3.style = "display:flex"
+            n4.style = "display:none"
+            n5.style = "display:none"
+        }else if(bacia == "4"){
+            n1.style = "display:none"
+            n2.style = "display:none"
+            n3.style = "display:none"
+            n4.style = "display:flex"
+            n5.style = "display:none"
+        }
+        else if(bacia == "5"){
+            n1.style = "display:none"
+            n2.style = "display:none"
+            n3.style = "display:none"
+            n4.style = "display:none"
+            n5.style = "display:flex"
+        }
     }
 
 </script>

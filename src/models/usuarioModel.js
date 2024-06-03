@@ -22,7 +22,17 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucaoSql);
 }
 
+function inserirPontuacao(id, pontos){
+    var instrucaoSql = `
+    insert into pontuacao(fkUsuario, pontos) values
+    (${id},${pontos});
+    `;
+    console.log("Inserindo pontuação no banco");
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    inserirPontuacao
 };

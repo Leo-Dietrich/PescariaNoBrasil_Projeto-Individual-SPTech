@@ -76,7 +76,33 @@ function cadastrar(req, res) {
     }
 }
 
+function inserirPontuacao(req, res){
+
+    var id = req.body.id;
+    var pontos = req.body.pontos;
+
+    usuarioModel.inserirPontuacao(
+        id, pontos
+    ).then(
+        function (resultado) {
+            res.json(resultado);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            console.log(
+                "\nHouve um erro ao realizar o cadastro! Erro: ",
+                erro.sqlMessage
+            );
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+    
+
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    inserirPontuacao
 }
