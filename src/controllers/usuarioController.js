@@ -97,8 +97,6 @@ function inserirPontuacao(req, res){
             res.status(500).json(erro.sqlMessage);
         }
     );
-    
-
 }
 
 module.exports = {

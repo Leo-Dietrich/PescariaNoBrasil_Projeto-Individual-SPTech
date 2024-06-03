@@ -63,12 +63,14 @@ const questions = [
 
 let currentQuestionIndex = 0;
 let score = 0;
+let chosenOptionIndex = 0;
 
 function loadQuestion() {
     const questionElement = document.getElementById('question');
     const options = document.querySelectorAll('.option');
-    const questionImg = document.getElementById('questionImg');
     const currentQuestion = questions[currentQuestionIndex];
+    
+    document.getElementById('next-button').style.display = 'none';
     
     questionElement.innerText = currentQuestion.question;
     questionElement.innerHTML += currentQuestion.img;
@@ -78,29 +80,26 @@ function loadQuestion() {
 }
 
 function selectAnswer(selectedIndex) {
-    const currentQuestion = questions[currentQuestionIndex];
-    
-    if (selectedIndex === currentQuestion.correct) {
-        score++;
-    }
-    
+    chosenOptionIndex = selectedIndex;
     document.getElementById('next-button').style.display = 'block';
 }
 
 function nextQuestion() {
+    const currentQuestion = questions[currentQuestionIndex];
+    
+    if (chosenOptionIndex === currentQuestion.correct) {
+        score++;
+    }
+
     currentQuestionIndex++;
     
     if (currentQuestionIndex < questions.length) {
         loadQuestion();
-        document.getElementById('next-button').style.display = 'none';
     } else {
-        finishQuiz();
+        sendScoreToServer();
     }
 }
 
-function finishQuiz() {
-    sendScoreToServer();
-}
 
 function sendScoreToServer() {
     fetch('usuarios/inserirPontuacao', {
