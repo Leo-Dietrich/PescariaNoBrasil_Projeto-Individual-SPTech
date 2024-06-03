@@ -1,63 +1,64 @@
 const questions = [
     {
         question: `Qual o nome do peixe:`,
-        imgUrl: `<img scr="./assets/peixequiz.png">`,
+        img: `<img src="./assets/peixequiz.png">`,
         options: ["Tilápia", "Pirarucu", "Dourado", "Pacu"],
         correct: 0
     },
     {
         question: `Qual das iscas a seguir NÃO é boa para tucunaré?`,
-        imgUrl: ``,
+        img: ``,
         options: ["Artificiais", "Lambari", "Camarão", "Massas"],
         correct: 3
     },
     {
         question: `Qual o maior peixe de água doce do Brasil?`,
-        imgUrl: ``,
+        img: ``,
         options: ["Jaú", "Piraíba", "Pirarucu", "Piau"],
         correct: 1
     },
     {
         question: `Como se chama este tipo de isca? `,
-        imgUrl: `<img src="./assets/isca1.png">`,
+        img: `<img src="./assets/isca1.png">`,
         options: ["Plug/Meia água", "Jig/Peninha", "Popper", "Zara/Lápis"],
         correct: 1
     },
     {
         question: `Qual a isca ideal para Pirarara?`,
-        imgUrl: ``, 
+        img: ``, 
         options: ["Peixes Vivos", "Camarão", "Filé de Frango", "Coquinho"],
         correct: 0
     },
     {
-        question: `Qual peixe brasileiro é o mais pescado no país?`,
-        imgUrl: ``,
-        options: ["Tilápia", "Tucunaré", "Traíra", "Lambari"],
+        question: `Qual desses peixes é predador?`,
+        img: ``,
+        options: ["Tilápia", "Curimba", "Traíra", "Lambari"],
         correct: 2
     },
     {
         question: `Que rio da amazônia se destaca pela pescaria de peixes de couro?`,
-        imgUrl: ``,
+        img: ``,
         options: ["Rio Xingu", "Rio Madeira", "Rio Negro", "Rio Orinoco"],
         correct: 1
     },
     {
         question: `A melhor isca para pegar piranhas é?`,
-        imgUrl: ``,
+        img: ``,
         options: ["Carne", "Coquinho", "Peixes vivos", "Todas"],
         correct: 3
     },
     {
-        question: `Como se chama esse peixe?`,
-        imgUrl: `<img scr="./assets/peixequiz2.jpg">`,
-        options: ["Pintado", "Cachara", "Caparari", "Jaú"],
+        question: `Como se chama este peixe?`,
+        img: `<img src="./assets/peixequiz2.jpg">`,
+        options: ["Surubim Pintado", "Surubim Cachara", "Surubim Caparari", "Jaú"],
         correct: 0
+    },
+    {
+        question: `Qual desses peixes não é nativo do Brasil?`,
+        img: ``,
+        options: ["Cará", "Tilápia", "Pirarucu", "Aruanã"],
+        correct: 1
     }
-    // {
-    //     question: ``,
-    //     options: ["", "", "", ""],
-    //     correct: 0
-    // },
 ];
 
 let currentQuestionIndex = 0;
@@ -70,7 +71,7 @@ function loadQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
     
     questionElement.innerText = currentQuestion.question;
-    questionElement.innerHTML += currentQuestion.imgUrl;
+    questionElement.innerHTML += currentQuestion.img;
     options.forEach((option, index) => {
         option.innerText = currentQuestion.options[index];
     });
@@ -118,7 +119,23 @@ function sendScoreToServer() {
 
         if (resposta.ok) {
 
-            //resposta para pontuacao
+            quiz.style.display = "none";
+            resultado.style.display = "flex"
+
+            if(score >= 0 && score < 4){
+                resultado.innerHTML = `<h1>Você fez ${score} pontos 😒</h1> <br>
+                <p>Tá precisando pescar mais!<p>`;
+            }else if(score >=4 && score <=6){
+                resultado.innerHTML = `<h1>Você fez ${score} pontos 😐</h1> <br>
+                <p>Dá pra melhorar!<p>`;
+            }else if(score >=7 && score <=9){
+                resultado.innerHTML = `<h1>Você fez ${score} pontos 😊</h1> <br>
+                <p>Boaaa pescador!<p>`;
+            }else if(score == 10){
+                resultado.innerHTML = `<h1>Você fez ${score} pontos 😁</h1> <br>
+                <p>Parabéns! Você sabe muito sobre pescaria!<p>`;
+            }
+            resultado.innerHTML += ``// chart aqui
           
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";

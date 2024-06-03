@@ -195,3 +195,12 @@ option{
     font-size: 60px;
     font-weight: 700;
 }
+.rio{
+    height: 300px;
+    padding: 1rem;
+    width: 80vw;
+    overflow: hidden;
+}
+.rio p{
+    font-size: 25px;
+}
