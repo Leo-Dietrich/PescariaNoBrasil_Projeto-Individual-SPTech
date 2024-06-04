@@ -98,9 +98,17 @@ function inserirPontuacao(req, res){
         }
     );
 }
+function resgatarProgresso(req, res){
+    var idPontuacao = req.body.idPontuacao;
+    var pontos = req.body.pontos;
+    usuarioModel.resgatarProgresso(
+        idPontuacao, pontos
+    )
+}
 
 module.exports = {
     autenticar,
     cadastrar,
-    inserirPontuacao
+    inserirPontuacao,
+    resgatarProgresso
 }

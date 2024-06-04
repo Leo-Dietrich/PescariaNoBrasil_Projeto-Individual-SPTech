@@ -31,8 +31,17 @@ function inserirPontuacao(id, pontos){
     return database.executar(instrucaoSql);
 }
 
+function resgatarProgresso(id){
+    var instrucaoSql = `
+        SELECT idPontuacao, pontos FROM pontuacao where fkUsuario = '${id}';
+    `;
+    console.log("Resgatando histórico de pontuação do usuário.")
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     autenticar,
     cadastrar,
-    inserirPontuacao
+    inserirPontuacao,
+    resgatarProgresso
 };
