@@ -23,7 +23,7 @@ insert into pontuacao(fkUsuario, pontos) values
 
 select*from pontuacao;
 
-select count(distinct fkUsuario) from pontuacao where pontos = 10;
+select idPontuacao, pontos from pontuacao where fkUsuario = 1;
 
 select count(distinct fkUsuario) from pontuacao where pontos = 0;
 select count(distinct fkUsuario) from pontuacao where pontos = 1;
