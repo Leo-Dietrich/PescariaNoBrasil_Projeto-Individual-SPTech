@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <script src="./js/sessao.js"></script>
     <script src="./js/scriptquiz.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body onload="validarSessao()">
@@ -38,16 +39,17 @@
                 </a>
             </div>
             <div class="username txtheader" id="divBemvindo">
-                <p>Bem-vindo(a), <span id="spanUser">usuário</span>!</p> 
-                <p class="btnSair" onmouseover="abrirPorta()" onmouseleave="fecharPorta()" onclick="limparSessao()"><i id="porta"  class="fa-solid fa-door-closed"></i>Sair</p>
+                <p>Bem-vindo(a), <span id="spanUser">usuário</span>!</p>
+                <p class="btnSair" onmouseover="abrirPorta()" onmouseleave="fecharPorta()" onclick="limparSessao()"><i
+                        id="porta" class="fa-solid fa-door-closed"></i>Sair</p>
             </div>
         </ul>
     </div>
     <div class="bg">
         <div class="conteudo">
 
-                <p class="titulo">Teste seus conhecimentos!</p>
-                
+            <p class="titulo">Teste seus conhecimentos!</p>
+
             <div class="quiz-container">
                 <div id="quiz">
                     <div id="question"></div>
@@ -60,14 +62,88 @@
                     <button id="next-button" onclick="nextQuestion()">Próxima</button>
                 </div>
                 <div class="resultado" id="resultado">
+                    <h1 id="resultadoH1"></h1> <br>
+                    <p id="resultadoP"></p>
+                    <div class="chartNotas">
+                        <canvas id="myChart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
         <footer>
             <span class="conteudofooter">Feito com amor por um aluno SPTech e pescador esportivo 🎣💛</span> <br>
-            <span class="conteudofooter" style="font-size: 15px;">Por Leonardo Dietrich©  </span> <br>
+            <span class="conteudofooter" style="font-size: 15px;">Por Leonardo Dietrich© </span> <br>
             <a href="https://github.com/Leo-Dietrich"><img src="./assets/icone-github.png" alt=""></a>
         </footer>
     </div>
 </body>
+
 </html>
+
+<script>
+
+    function resgatarProgresso() {
+        let idUsuario = sessionStorage.ID_USUARIO;
+        fetch(`/usuarios/pontuacoes/${idUsuario}`).then(function (resposta) {
+            resposta.json().then(function (json) {
+
+                var labels = [];
+                var data = [];
+
+                for (var i = 0; i < json.length; i++) {
+                    labels.push(i+1);
+                    data.push(json[i].pontos);
+                }
+
+                criarGrafico(labels, data)
+            })
+        })
+
+    }
+
+    function criarGrafico(labels, data) {
+
+
+        const chartData = { // linhas
+            labels: labels,
+            datasets: [{
+                label: 'Sua Nota',
+                data: data,
+                borderColor: ['#002776'],
+                backgroundColor: ['#002776'],
+                tension: 0.3
+            }
+            ]
+        }
+        const options = {
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Tentativas'
+                    }
+                },
+                y: {
+                    min: 0,
+                    max:10,
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Notas'
+                    }
+                },
+            }
+        }
+        const config = {
+            type: 'line',
+            data: chartData,
+            options: options
+        }
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        )
+    }
+
+</script>

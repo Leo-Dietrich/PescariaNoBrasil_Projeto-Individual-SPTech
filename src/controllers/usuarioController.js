@@ -76,7 +76,7 @@ function cadastrar(req, res) {
     }
 }
 
-function inserirPontuacao(req, res){
+function inserirPontuacao(req, res) {
 
     var id = req.body.id;
     var pontos = req.body.pontos;
@@ -91,19 +91,29 @@ function inserirPontuacao(req, res){
         function (erro) {
             console.log(erro);
             console.log(
-                "\nHouve um erro ao realizar o cadastro! Erro: ",
+                "\nHouve um erro ao inserir a pontuação! Erro: ",
                 erro.sqlMessage
             );
             res.status(500).json(erro.sqlMessage);
         }
     );
 }
-function resgatarProgresso(req, res){
-    var idPontuacao = req.body.idPontuacao;
-    var pontos = req.body.pontos;
+function resgatarProgresso(req, res) {
+    var idUsuario = req.params.idUsuario;
     usuarioModel.resgatarProgresso(
-        idPontuacao, pontos
-    )
+        idUsuario
+    ).then(
+        function (resultadoPontuacoes) {
+            console.log(resultadoPontuacoes);
+            res.status(200).json(resultadoPontuacoes);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            console.log("\nHouve um erro ao resgatar a pontuação! Erro: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
 }
 
 module.exports = {

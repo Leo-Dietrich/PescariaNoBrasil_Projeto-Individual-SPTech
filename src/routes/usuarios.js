@@ -14,5 +14,8 @@ router.post("/autenticar", function (req, res) {
 router.post("/inserirPontuacao", function (req, res) {
     usuarioController.inserirPontuacao(req, res);
 });
+router.get("/pontuacoes/:idUsuario", function (req,res) {
+    usuarioController.resgatarProgresso(req,res);
+});
 
 module.exports = router;

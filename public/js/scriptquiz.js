@@ -122,19 +122,20 @@ function sendScoreToServer() {
             resultado.style.display = "flex"
 
             if(score >= 0 && score < 4){
-                resultado.innerHTML = `<h1>Você fez ${score} pontos 😒</h1> <br>
-                <p>Tá precisando pescar mais!<p>`;
+                resultadoH1.innerHTML = `Você fez ${score} pontos 😒`
+                resultadoP.innerHTML ='Tá precisando pescar mais!';
             }else if(score >=4 && score <=6){
-                resultado.innerHTML = `<h1>Você fez ${score} pontos 😐</h1> <br>
-                <p>Dá pra melhorar!<p>`;
+                
+                resultadoH1.innerHTML = `Você fez ${score} pontos 😐`
+                resultadoP.innerHTML ='Dá pra melhorar!';
             }else if(score >=7 && score <=9){
-                resultado.innerHTML = `<h1>Você fez ${score} pontos 😊</h1> <br>
-                <p>Boaaa pescador!<p>`;
+                resultadoH1.innerHTML = `Você fez ${score} pontos 😊`
+                resultadoP.innerHTML ='Boaaa pescador!';
             }else if(score == 10){
-                resultado.innerHTML = `<h1>Você fez ${score} pontos 😁</h1> <br>
-                <p>Parabéns! Você sabe muito sobre pescaria!<p>`;
+                resultadoH1.innerHTML = `<h1>Você fez ${score} pontos 😁`
+                resultadoP.innerHTML = 'Parabéns! Você sabe muito sobre pescaria!';
             }
-            resultado.innerHTML += ``// chart aqui
+            resgatarProgresso()
           
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
