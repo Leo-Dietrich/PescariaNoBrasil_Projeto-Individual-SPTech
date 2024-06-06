@@ -16,20 +16,10 @@ function validarSessao() {
         divLogcad.style ="display: none"
         divBemvindo.style ="display: flex"
         spanUser.innerHTML = primeiroNome;
-        if(window.location == "./quiz.html"){
-            
-            checkLogin.style ="display: none"
-            quiz.style ="display: flex" 
-        }
 
     } else {
         divLogcad.style ="display: flex"
         divBemvindo.style ="display: none"
-        if(window.location == "./quiz.html"){
-
-            checkLogin.style ="display: flex"
-            quiz.style ="display: none"
-        }
     }
 }
 

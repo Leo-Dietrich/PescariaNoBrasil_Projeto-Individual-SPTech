@@ -1,3 +1,31 @@
+function validarSessaoQuiz() {
+    var email = sessionStorage.EMAIL_USUARIO;
+    var nome = sessionStorage.NOME_USUARIO;
+    var primeiroNome = '';
+
+    var spanUser = document.getElementById("spanUser");
+
+    if (email != undefined && nome != undefined) {
+        for (let i = 0; i < nome.length; i++) {
+            primeiroNome += nome[i];
+            if (nome[i + 1] == ' ') {
+                break
+            }
+        }
+        divLogcad.style = "display: none"
+        divBemvindo.style = "display: flex"
+        spanUser.innerHTML = primeiroNome;
+        checkLogin.style = "display: none"
+        quiz.style = "display: flex"
+    } else {
+        divLogcad.style = "display: flex"
+        divBemvindo.style = "display: none"
+        checkLogin.style = "display: flex"
+        quiz.style = "display: none"
+    }
+
+}
+
 const questions = [
     {
         question: `Qual o nome do peixe:`,
@@ -25,7 +53,7 @@ const questions = [
     },
     {
         question: `Qual a isca ideal para Pirarara?`,
-        img: ``, 
+        img: ``,
         options: ["Peixes Vivos", "Camarão", "Filé de Frango", "Coquinho"],
         correct: 0
     },
@@ -69,9 +97,9 @@ function loadQuestion() {
     const questionElement = document.getElementById('question');
     const options = document.querySelectorAll('.option');
     const currentQuestion = questions[currentQuestionIndex];
-    
+
     document.getElementById('next-button').style.display = 'none';
-    
+
     questionElement.innerText = currentQuestion.question;
     questionElement.innerHTML += currentQuestion.img;
     options.forEach((option, index) => {
@@ -86,13 +114,13 @@ function selectAnswer(selectedIndex) {
 
 function nextQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
-    
+
     if (chosenOptionIndex === currentQuestion.correct) {
         score++;
     }
 
     currentQuestionIndex++;
-    
+
     if (currentQuestionIndex < questions.length) {
         loadQuestion();
     } else {
@@ -105,13 +133,13 @@ function sendScoreToServer() {
     fetch('usuarios/inserirPontuacao', {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+            "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          // crie um atributo que recebe o valor recuperado aqui
-          // Agora vá para o arquivo routes/usuario.js
-          id:sessionStorage.ID_USUARIO,
-          pontos: score,
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            id: sessionStorage.ID_USUARIO,
+            pontos: score,
         }),
     }).then(function (resposta) {
         console.log("resposta: ", resposta);
@@ -121,29 +149,29 @@ function sendScoreToServer() {
             quiz.style.display = "none";
             resultado.style.display = "flex"
 
-            if(score >= 0 && score < 4){
+            if (score >= 0 && score < 4) {
                 resultadoH1.innerHTML = `Você fez ${score} pontos 😒`
-                resultadoP.innerHTML ='Tá precisando pescar mais!';
-            }else if(score >=4 && score <=6){
-                
+                resultadoP.innerHTML = 'Tá precisando pescar mais!';
+            } else if (score >= 4 && score <= 6) {
+
                 resultadoH1.innerHTML = `Você fez ${score} pontos 😐`
-                resultadoP.innerHTML ='Dá pra melhorar!';
-            }else if(score >=7 && score <=9){
+                resultadoP.innerHTML = 'Dá pra melhorar!';
+            } else if (score >= 7 && score <= 9) {
                 resultadoH1.innerHTML = `Você fez ${score} pontos 😊`
-                resultadoP.innerHTML ='Pescador de verdade!';
-            }else if(score == 10){
+                resultadoP.innerHTML = 'Pescador de verdade!';
+            } else if (score == 10) {
                 resultadoH1.innerHTML = `<h1>Você fez ${score} pontos 😁`
                 resultadoP.innerHTML = 'Parabéns! Você sabe muito sobre pescaria!';
             }
             resgatarProgresso()
-          
+
         } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
+            throw "Houve um erro ao tentar realizar o cadastro!";
         }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
+    })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
