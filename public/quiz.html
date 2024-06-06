@@ -51,6 +51,10 @@
             <p class="titulo">Teste seus conhecimentos!</p>
 
             <div class="quiz-container">
+                <div id="checkLogin">
+                    <h1>Você precisa estar logado para fazer o quiz!</h1>
+                <a href="./login.html"> <p>Clique aqui para fazer login</p></a>
+                </div>
                 <div id="quiz">
                     <div id="question"></div>
                     <div class="opcoes">
@@ -67,6 +71,7 @@
                     <div class="chartNotas">
                         <canvas id="myChart"></canvas>
                     </div>
+                    <button onclick="refazerQuiz()">Refazer Quiz</button>
                 </div>
             </div>
         </div>
@@ -144,6 +149,10 @@
             document.getElementById('myChart'),
             config
         )
+    }
+
+    function refazerQuiz(){
+        window.location.reload(true);
     }
 
 </script>

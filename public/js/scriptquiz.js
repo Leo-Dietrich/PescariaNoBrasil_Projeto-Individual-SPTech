@@ -130,7 +130,7 @@ function sendScoreToServer() {
                 resultadoP.innerHTML ='Dá pra melhorar!';
             }else if(score >=7 && score <=9){
                 resultadoH1.innerHTML = `Você fez ${score} pontos 😊`
-                resultadoP.innerHTML ='Boaaa pescador!';
+                resultadoP.innerHTML ='Pescador de verdade!';
             }else if(score == 10){
                 resultadoH1.innerHTML = `<h1>Você fez ${score} pontos 😁`
                 resultadoP.innerHTML = 'Parabéns! Você sabe muito sobre pescaria!';

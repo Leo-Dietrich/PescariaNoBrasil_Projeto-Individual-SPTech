@@ -216,9 +216,34 @@ footer img{
     text-align: center;
     flex-direction: column;
     font-size: 15px;
+    align-items: center;
 }
 .chartNotas{
     width: 500px;
     display: inline-flex; 
     flex-direction: column;
+}
+.resultado button{
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: #007BFF;
+}
+.resultado button:hover{
+    cursor: pointer;
+    background-color: #0056b3;
+}
+#checkLogin{
+    text-align: center;
+    flex-direction: column;
+}
+#checkLogin a{
+    margin-top: 3rem;
+    color:black;
+}
+#checkLogin a p{
+    font-weight: 500;
+    font-size: 15px;
 }
